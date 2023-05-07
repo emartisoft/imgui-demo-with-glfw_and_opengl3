@@ -10,7 +10,7 @@
 #pragma comment(lib, "legacy_stdio_definitions")
 #endif
 
-// if you do not want to use u8 string literal
+// if you do not want use u8 string literal
 #pragma execution_character_set("utf-8")
 
 static void glfw_error_callback(int error, const char* description)
@@ -18,21 +18,21 @@ static void glfw_error_callback(int error, const char* description)
     fprintf(stderr, "GLFW Error %d: %s\n", error, description);
 }
 
-// https://github.com/ocornut/imgui/issues/1880#issuecomment-817197889
 static const ImWchar icons_ranges_Turkish[] = {
 0x0020, 0x00FF, // Basic Latin + Latin Supplement
-0x00c7, 0x00c7, // Ã‡
-0x00e7, 0x00e7, // Ã§
-0x011e, 0x011e, // Ã
-0x011f, 0x011f, // Ã°
-0x0130, 0x0130,// Ã
-0x0131, 0x0131, // Ã½
-0x00d6, 0x00d6, // Ã–
-0x00f6, 0x00f6, // Ã¶
-0x015e, 0x015e, // Ã
-0x015f, 0x015f, // Ã¾
-0x00dc, 0x00dc, // Ãœ
-0x00fc, 0x00fc, // Ã¼
+0x00c7, 0x00c7, // Ç
+0x00e7, 0x00e7, // ç
+0x011e, 0x011e, // Ğ
+0x011f, 0x011f, // ğ
+0x0130, 0x0130,// İ
+0x0131, 0x0131, // ı
+0x00d6, 0x00d6, // Ö
+0x00f6, 0x00f6, // ö
+0x015e, 0x015e, // Ş
+0x015f, 0x015f, // ş
+0x00dc, 0x00dc, // Ü
+0x00fc, 0x00fc, // ü
+
 0, };
 
 // Main code
@@ -115,11 +115,11 @@ int main(int, char**)
             static float f = 0.0f;
             static int counter = 0;
 
-            ImGui::Begin(u8"Hello, world! TÃ¼rkÃ§e Ã¶Ã§Ã¾iÃ°Ã¼Ã–Ã‡ÃÃÃÃœ");                          // Create a window called "Hello, world!" and append into it.
+            ImGui::Begin(u8"Hello, world! Türkçe öçşiğüÖÇŞİĞÜ");                          // Create a window called "Hello, world!" and append into it.
 
             
-            ImGui::Text(u8"This is some useful text. TÃ¼rkÃ§e Ã¶Ã§Ã¾iÃ°Ã¼Ã–Ã‡ÃÃÃÃœ");               // Display some text (you can use a format strings too)
-            ImGui::Text("Bu satÄ±r u8 string literal kullanmadÄ±. TÃ¼rkÃ§e Ã¶Ã§Ã¾iÃ°Ã¼Ã–Ã‡ÃÃÃÃœ"); 
+            ImGui::Text(u8"This is some useful text. Türkçe öçşiğüÖÇŞİĞÜ");               // Display some text (you can use a format strings too)
+            ImGui::Text("Bu satır u8 string literal kullanmadı. Türkçe öçşiğüÖÇŞİĞÜ");
             ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
             ImGui::Checkbox("Another Window", &show_another_window);
 
