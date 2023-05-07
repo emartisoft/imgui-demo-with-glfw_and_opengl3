@@ -10,6 +10,9 @@
 #pragma comment(lib, "legacy_stdio_definitions")
 #endif
 
+// if you do not want to use u8 string literal
+#pragma execution_character_set("utf-8")
+
 static void glfw_error_callback(int error, const char* description)
 {
     fprintf(stderr, "GLFW Error %d: %s\n", error, description);
@@ -116,6 +119,7 @@ int main(int, char**)
 
             
             ImGui::Text(u8"This is some useful text. Türkçe öçþiðüÖÇÞÝÐÜ");               // Display some text (you can use a format strings too)
+            ImGui::Text("Bu satır u8 string literal kullanmadı. Türkçe öçþiðüÖÇÞÝÐÜ"); 
             ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
             ImGui::Checkbox("Another Window", &show_another_window);
 
